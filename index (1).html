@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Aarav Sharma — AI & Data Science Engineer</title>
+<meta name="description" content="Aarav Sharma — B.Tech AI & Data Science at GGSIPU. Building at the frontier of LLMs, computer vision, and production AI systems."/>
+<meta property="og:title" content="Aarav Sharma — AI & Data Science Engineer"/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --a:#2DD4BF;--ad:#22a898;
+  --bg:#0B0E14;--bgp:#0F1420;--bgc:#141928;
+  --t:#D4DCEC;--ts:#8D9AB0;--tm:#4E5D73;
+  --b:#1C2438;--nb:rgba(11,14,20,.93);
+  --pu:#8B7CF8;--or:#F97B4A;--go:#F5B946;
+  --r:14px;--rs:8px
+}
+.light{
+  --bg:#ECF0F8;--bgp:#E2E7F2;--bgc:#FFF;
+  --t:#0C1220;--ts:#3D4F68;--tm:#7A8EA8;
+  --b:#C8D2E4;--nb:rgba(236,240,248,.93);
+  --a:#0EA5A0;--ad:#0b8a86
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t);overflow-x:hidden;transition:background .3s,color .3s}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:var(--a);border-radius:2px}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--nb);backdrop-filter:blur(20px);border-bottom:1px solid var(--b);transition:background .3s,border-color .3s}
+.ni{max-width:1160px;margin:0 auto;padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;color:var(--t);text-decoration:none;display:flex;align-items:baseline}
+.ld{color:var(--a)}
+.lv{color:var(--a);font-size:.67rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-left:1px;opacity:.88}
+.nl{display:flex;align-items:center;gap:26px;list-style:none}
+.nl a{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.05em;color:var(--tm);text-decoration:none;position:relative;padding-bottom:2px;transition:color .2s}
+.nl a::after{content:'';position:absolute;left:0;bottom:-1px;width:0;height:1px;background:var(--a);transition:width .25s}
+.nl a:hover{color:var(--a)}
+.nl a:hover::after{width:100%}
+.na{display:flex;align-items:center;gap:8px}
+#tbtn,#hbtn{width:36px;height:36px;border-radius:var(--rs);border:1px solid var(--b);background:var(--bgc);color:var(--tm);cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s}
+#tbtn:hover,#hbtn:hover{border-color:var(--a);color:var(--a)}
+#hbtn{display:none}
+#mnav{display:none;flex-direction:column;border-top:1px solid var(--b);background:var(--nb);backdrop-filter:blur(20px);padding:8px 24px 18px}
+#mnav.open{display:flex}
+#mnav a{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:500;color:var(--ts);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--b);transition:color .2s}
+#mnav a:last-child{border-bottom:none}
+#mnav a:hover{color:var(--a)}
+
+/* SHARED */
+.w{max-width:1160px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.sl{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--a);margin-bottom:10px}
+.st{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,4vw,2.35rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--t)}
+.card{background:var(--bgc);border:1px solid var(--b);border-radius:var(--r);transition:border-color .25s,transform .25s,box-shadow .25s}
+.card:hover{border-color:var(--a);transform:translateY(-3px);box-shadow:0 16px 48px rgba(45,212,191,.08)}
+.pill{display:inline-flex;align-items:center;padding:3px 11px;border-radius:100px;font-size:.7rem;font-weight:500;background:rgba(45,212,191,.07);color:var(--a);border:1px solid rgba(45,212,191,.2);white-space:nowrap}
+.tag{padding:7px 15px;border-radius:var(--rs);font-family:'Syne',sans-serif;font-size:.8rem;font-weight:600;background:var(--bgc);border:1px solid var(--b);color:var(--ts);display:inline-block;transition:border-color .2s,color .2s,background .2s}
+.tag:hover{border-color:var(--a);color:var(--a);background:rgba(45,212,191,.04)}
+.sc{flex:1;min-width:78px;text-align:center;padding:10px 12px;border-radius:var(--rs);background:rgba(45,212,191,.05);border:1px solid rgba(45,212,191,.13)}
+.sc .n{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--a)}
+.sc .l{font-size:.68rem;color:var(--tm);margin-top:2px}
+.bp{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:10px;background:var(--a);color:#071015;font-family:'Syne',sans-serif;font-size:.88rem;font-weight:700;text-decoration:none;letter-spacing:.02em;transition:background .2s,transform .15s,box-shadow .2s}
+.bp:hover{background:var(--ad);transform:translateY(-1px);box-shadow:0 8px 24px rgba(45,212,191,.25)}
+.bg{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:10px;border:1px solid var(--b);color:var(--ts);font-family:'Syne',sans-serif;font-size:.88rem;font-weight:600;text-decoration:none;background:transparent;transition:border-color .2s,color .2s,transform .15s}
+.bg:hover{border-color:var(--a);color:var(--a);transform:translateY(-1px)}
+.divider{height:1px;background:var(--b)}
+.pr{display:flex;flex-wrap:wrap;gap:7px}
+.tr{display:flex;flex-wrap:wrap;gap:9px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.d1{transition-delay:.1s}
+.reveal.d2{transition-delay:.2s}
+.reveal.d3{transition-delay:.3s}
+.reveal.in{opacity:1;transform:none}
+
+/* HERO */
+#hero{min-height:100vh;padding:96px 24px 80px;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--bg)}
+.hgrid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(var(--b) 1px,transparent 1px),linear-gradient(90deg,var(--b) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 30%,transparent 100%);opacity:.6}
+.hglow{position:absolute;width:720px;height:480px;background:radial-gradient(ellipse,rgba(45,212,191,.09) 0%,transparent 70%);top:-160px;left:50%;transform:translateX(-50%);pointer-events:none;z-index:0}
+.hcontent{position:relative;z-index:1;max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center}
+.av{width:142px;height:142px;border-radius:50%;background:linear-gradient(135deg,var(--a) 0%,var(--pu) 100%);padding:3px;position:relative;margin-bottom:26px;display:inline-block}
+.avi{width:100%;height:100%;border-radius:50%;background:var(--bgp);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;color:var(--a);letter-spacing:-2px}
+.avb{position:absolute;bottom:5px;right:5px;width:33px;height:33px;border-radius:50%;background:linear-gradient(135deg,var(--go),#d9861e);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.45)}
+.sbadge{display:inline-flex;align-items:center;gap:8px;padding:5px 15px;border-radius:100px;background:rgba(45,212,191,.07);border:1px solid rgba(45,212,191,.22);margin-bottom:20px}
+.sdot{width:7px;height:7px;border-radius:50%;background:var(--a);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.stxt{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--a)}
+.hname{font-family:'Syne',sans-serif;font-size:clamp(3rem,8.5vw,6.2rem);font-weight:800;line-height:.95;letter-spacing:-.04em;color:var(--t);margin-bottom:16px}
+.hname span{color:var(--a)}
+.hsub{font-family:'Syne',sans-serif;font-size:clamp(.9rem,2vw,1.1rem);font-weight:500;color:var(--ts);margin-bottom:14px}
+.hbio{font-size:.97rem;line-height:1.77;color:var(--tm);max-width:540px;margin-bottom:34px}
+.hbio strong{color:var(--ts);font-weight:500}
+.ctas{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-bottom:50px}
+.hstats{display:flex;flex-wrap:wrap;gap:13px;justify-content:center}
+.hs{padding:11px 20px;border-radius:var(--rs);text-align:center;min-width:106px;background:rgba(45,212,191,.05);border:1px solid rgba(45,212,191,.13)}
+.hs .n{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--a)}
+.hs .l{font-size:.73rem;color:var(--tm);margin-top:2px}
+
+/* ABOUT */
+#about{background:var(--bgp)}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:38px}
+.ap{font-size:.95rem;line-height:1.82;color:var(--tm)}
+.ap strong{color:var(--ts);font-weight:500}
+.ap .hl{color:var(--a);font-weight:500}
+.tchips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.tc{padding:9px 18px;border-radius:10px;font-family:'Syne',sans-serif;font-size:.88rem;font-weight:700;border:1px solid var(--b);background:var(--bgc);color:var(--ts);transition:border-color .2s,color .2s}
+.tc:hover{border-color:var(--a);color:var(--a)}
+.tc.hl{border-color:rgba(45,212,191,.4);color:var(--a);background:rgba(45,212,191,.05)}
+
+/* EXPERIENCE */
+#experience{background:var(--bg)}
+.tl{position:relative;padding-left:48px;display:flex;flex-direction:column;gap:26px;margin-top:48px}
+.tl-line{position:absolute;left:17px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--a),transparent)}
+.tli{position:relative}
+.tld{position:absolute;left:-34px;top:24px;width:10px;height:10px;border-radius:50%;background:var(--a);box-shadow:0 0 0 3px rgba(45,212,191,.18)}
+.ec{padding:26px 28px}
+.eh{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px}
+.etit{font-family:'Syne',sans-serif;font-size:1.08rem;font-weight:800;color:var(--t)}
+.eco{font-family:'Syne',sans-serif;font-size:.87rem;font-weight:600;color:var(--a);margin-top:4px}
+.edt{font-size:.78rem;color:var(--tm);margin-top:3px}
+.ebadge{padding:3px 11px;border-radius:100px;font-size:.68rem;font-weight:600}
+.bg-gold{background:rgba(245,185,70,.1);border:1px solid rgba(245,185,70,.3);color:var(--go)}
+.bg-teal{background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.22);color:var(--a)}
+.edesc{font-size:.88rem;line-height:1.72;color:var(--tm);margin-bottom:18px}
+.edesc strong{color:var(--ts);font-weight:500}
+
+/* PROJECTS */
+#projects{background:var(--bgp)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;margin-top:48px}
+.pcard{padding:26px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--pu));opacity:0;transition:opacity .25s}
+.pcard:hover::before{opacity:1}
+.pico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.it{background:rgba(45,212,191,.1);border:1px solid rgba(45,212,191,.22);color:var(--a)}
+.ip{background:rgba(139,124,248,.1);border:1px solid rgba(139,124,248,.22);color:var(--pu)}
+.io{background:rgba(249,123,74,.1);border:1px solid rgba(249,123,74,.22);color:var(--or)}
+.pmeta{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:16px}
+.ptit{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:var(--t)}
+.pdate{font-size:.73rem;color:var(--tm);font-family:'Syne',sans-serif;font-weight:600;white-space:nowrap;margin-top:2px}
+.psub{font-size:.82rem;color:var(--tm);margin-bottom:13px}
+.pdesc{font-size:.86rem;line-height:1.73;color:var(--tm);margin-bottom:20px;flex:1}
+.pdesc strong{color:var(--ts);font-weight:500}
+.pstats{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+
+/* SKILLS */
+#skills{background:var(--bg)}
+.sblock{margin-top:48px;display:flex;flex-direction:column;gap:30px}
+.sgl{display:flex;align-items:center;gap:10px;margin-bottom:15px}
+.sgl i{color:var(--a);font-size:.88rem}
+.sgl span{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tm)}
+
+/* ACHIEVEMENTS */
+#achievements{background:var(--bgp)}
+.alist{margin-top:48px;display:flex;flex-direction:column;gap:11px}
+.aitem{display:flex;align-items:flex-start;gap:14px;padding:15px 20px;border-radius:12px;background:var(--bgc);border:1px solid var(--b);transition:border-color .2s}
+.aitem:hover{border-color:rgba(45,212,191,.4)}
+.aico{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.86rem}
+.ag{background:rgba(245,185,70,.1);border:1px solid rgba(245,185,70,.25);color:var(--go)}
+.at{background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.2);color:var(--a)}
+.ap2{background:rgba(139,124,248,.1);border:1px solid rgba(139,124,248,.2);color:var(--pu)}
+.atit{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;color:var(--t);margin-bottom:3px}
+.asub{font-size:.78rem;color:var(--tm)}
+
+/* CONTACT */
+#contact{background:var(--bg);padding-bottom:72px}
+.ci{max-width:580px;margin:0 auto;text-align:center}
+.ctag{font-size:.97rem;line-height:1.75;color:var(--tm);margin:16px auto 46px;max-width:440px}
+.clinks{display:flex;flex-direction:column;gap:11px;max-width:420px;margin:0 auto}
+.crow{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:12px;background:var(--bgc);border:1px solid var(--b);text-decoration:none;color:var(--t);transition:border-color .2s,transform .15s,color .2s}
+.crow:hover{border-color:var(--a);transform:translateX(5px);color:var(--a)}
+.cico{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.88rem}
+.clbl{font-size:.68rem;color:var(--tm)}
+.cval{font-family:'Syne',sans-serif;font-size:.88rem;font-weight:600}
+.carr{margin-left:auto;font-size:.76rem;color:var(--tm)}
+
+/* FOOTER */
+footer{padding:24px;border-top:1px solid var(--b);background:var(--bgp)}
+.fi{max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.fi span,.fi a{font-size:.79rem;color:var(--tm)}
+.fi a{text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
+.fi a:hover{color:var(--a)}
+
+/* RESPONSIVE */
+@media(max-width:820px){
+  .nl{display:none}
+  #hbtn{display:flex}
+  .agrid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .pgrid{grid-template-columns:1fr}
+  .hname{font-size:3rem}
+  .av{width:118px;height:118px}
+  .avi{font-size:2.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="ni">
+    <a href="#hero" class="logo">Aarav<span class="ld">.</span><span class="lv">DEV</span></a>
+    <ul class="nl">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="na">
+      <button id="tbtn" aria-label="Toggle theme"><i class="fa-solid fa-sun" id="tico"></i></button>
+      <button id="hbtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+  <div id="mnav">
+    <a href="#about" onclick="cm()">About</a>
+    <a href="#experience" onclick="cm()">Experience</a>
+    <a href="#projects" onclick="cm()">Projects</a>
+    <a href="#skills" onclick="cm()">Skills</a>
+    <a href="#achievements" onclick="cm()">Achievements</a>
+    <a href="#contact" onclick="cm()">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hgrid"></div>
+  <div class="hglow"></div>
+  <div class="hcontent">
+    <div class="av">
+      <div class="avi">AS</div>
+      <div class="avb"><i class="fa-solid fa-trophy"></i></div>
+    </div>
+    <div class="sbadge">
+      <span class="sdot"></span>
+      <span class="stxt">Open to Opportunities &middot; Batch 2029</span>
+    </div>
+    <h1 class="hname">Aarav<br><span>Sharma</span></h1>
+    <p class="hsub">AI &amp; Data Science Engineer &middot; B.Tech GGSIPU &rsquo;29</p>
+    <p class="hbio">Building at the frontier of <strong>LLMs, computer vision, and production AI systems</strong> &mdash; targeting research &amp; engineering roles at Google DeepMind, Anthropic &amp; NVIDIA.</p>
+    <div class="ctas">
+      <a href="#projects" class="bp"><i class="fa-solid fa-code-branch"></i> View Projects</a>
+      <a href="https://github.com/Aaravdotdev" target="_blank" class="bg"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/aaravai/" target="_blank" class="bg"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    </div>
+    <div class="hstats">
+      <div class="hs"><div class="n">9.3</div><div class="l">CGPA / 10</div></div>
+      <div class="hs"><div class="n">120+</div><div class="l">GitHub Stars</div></div>
+      <div class="hs"><div class="n">94.7%</div><div class="l">Best mAP</div></div>
+      <div class="hs"><div class="n">3+</div><div class="l">Yrs Building</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="w">
+    <div class="reveal"><div class="sl">Who I Am</div><h2 class="st">About Me</h2></div>
+    <div class="agrid">
+      <p class="ap reveal">I&rsquo;m a <strong>B.Tech student in Artificial Intelligence &amp; Data Science at GGSIPU, New Delhi</strong> (Batch 2029, CGPA 9.3/10), with a background spanning a government-incubated deep-tech startup, technology analysis, and accredited tech journalism &mdash; all before the age of 20. Before engineering, I was Head Boy at Pestle Weed College, a State-Level Judo Champion, and a Swimming Bronze Medalist.</p>
+      <p class="ap reveal d1">As Co-Founder &amp; CTO of <strong>PixFuzer</strong> &mdash; the world&rsquo;s first IoT-Blockchain integrated 3D printing platform, incubated by MeitY, Govt. of India &mdash; I architected the full tech stack as sole tech co-founder, earning the <span class="hl">Global Innovation Award at Diamond Challenge 2022, University of Delaware, USA</span>.</p>
+      <p class="ap reveal d2">My long-term vision is to work at the forefront of <strong>AI/ML and Large Language Models</strong>. I&rsquo;m passionate about building scalable, responsible AI systems pushing the boundaries of natural language understanding, multimodal intelligence, and real-world deployment at companies like <span class="hl">Google DeepMind, Anthropic, and NVIDIA</span>.</p>
+      <p class="ap reveal d3">I&rsquo;m focused on <strong>LLM optimisation</strong> (quantisation, distillation, inference acceleration), ethical AI frameworks, generative model safety, and production-grade infrastructure. Every project I build is grounded in one conviction: real-world impact emerges from rigorous engineering and thoughtful system design.</p>
+    </div>
+    <div class="reveal" style="margin-top:44px">
+      <div class="sl" style="margin-bottom:14px">Target Destinations</div>
+      <div class="tchips">
+        <span class="tc">Google DeepMind</span>
+        <span class="tc hl">Anthropic</span>
+        <span class="tc">NVIDIA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="w">
+    <div class="reveal"><div class="sl">Career</div><h2 class="st">Experience</h2></div>
+    <div class="tl">
+      <div class="tl-line"></div>
+
+      <div class="tli reveal">
+        <div class="tld"></div>
+        <div class="card ec">
+          <div class="eh">
+            <div><div class="etit">Co-Founder &amp; Chief Technology Officer</div><div class="eco">PixFuzer &middot; Self-Employed</div><div class="edt">Jan 2021 &ndash; Jan 2023 &middot; 2 yrs</div></div>
+            <span class="ebadge bg-gold">🏆 Global Award Winner</span>
+          </div>
+          <p class="edesc">World&rsquo;s first IoT-Blockchain integrated 3D printing platform, incubated by <strong>Apiary, MeitY, Govt. of India</strong>. Architected the full stack &mdash; smart contracts, hardware-software integration, and product development &mdash; as sole tech co-founder. Won the <strong>Global Innovation Award &middot; Diamond Challenge 2022, University of Delaware, USA</strong>.</p>
+          <div class="pr"><span class="pill">IoT Architecture</span><span class="pill">Blockchain / Smart Contracts</span><span class="pill">3D Printing Stack</span><span class="pill">MeitY Incubated</span></div>
+        </div>
+      </div>
+
+      <div class="tli reveal d1">
+        <div class="tld"></div>
+        <div class="card ec">
+          <div class="eh">
+            <div><div class="etit">Technology &amp; Operations Analyst</div><div class="eco">BD Construction Co.</div><div class="edt">2023 &ndash; 2024</div></div>
+          </div>
+          <p class="edesc">Built Python + Excel automation dashboards tracking project timelines, procurement costs, and contractor performance, achieving a <strong>~40% reduction in reporting turnaround</strong>. Digitised tender documentation and implemented structured ERP tracking across multiple govt. contract sites.</p>
+          <div class="pr"><span class="pill">Python Automation</span><span class="pill">Excel Dashboards</span><span class="pill">ERP Integration</span><span class="pill">Govt. Infrastructure</span></div>
+        </div>
+      </div>
+
+      <div class="tli reveal d2">
+        <div class="tld"></div>
+        <div class="card ec">
+          <div class="eh">
+            <div><div class="etit">Tech Correspondent &amp; Reporter</div><div class="eco">First News &middot; Haryana Union of Working Journalists</div><div class="edt">2024 &ndash; 2025</div></div>
+            <span class="ebadge bg-teal">Youngest in Haryana</span>
+          </div>
+          <p class="edesc">Covered technology, AI, startups &amp; digital policy as an accredited HUWJ member. Used Python for data journalism, trend analysis, and OSINT research. Produced data-driven investigative stories &mdash; one of the youngest accredited tech reporters in Haryana.</p>
+          <div class="pr"><span class="pill">Data Journalism</span><span class="pill">OSINT</span><span class="pill">AI Policy</span><span class="pill">Python Analytics</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="w">
+    <div class="reveal">
+      <div class="sl">What I&rsquo;ve Built</div>
+      <h2 class="st">Featured Projects</h2>
+      <p style="margin-top:10px;font-size:.94rem;color:var(--tm);max-width:480px">Production-grade AI/ML systems with measurable benchmarks and real-world deployment.</p>
+    </div>
+    <div class="pgrid">
+
+      <div class="card pcard reveal">
+        <div class="pmeta">
+          <div class="pico it"><i class="fa-solid fa-eye"></i></div>
+          <span class="pdate">Jan 2026</span>
+        </div>
+        <div class="ptit">NeuralSight</div>
+        <div class="psub">Real-Time Object Detection API</div>
+        <p class="pdesc">Fine-tuned YOLOv8 for edge deployment, achieving <strong>47 FPS on CPU</strong> with precision-recall optimisation. Containerised the inference pipeline in a FastAPI backend paired with a live bounding-box React frontend. Deployed as a production-ready API for real-time video analytics at scale.</p>
+        <div class="pstats">
+          <div class="sc"><div class="n">47 FPS</div><div class="l">CPU Inference</div></div>
+          <div class="sc"><div class="n">94.7%</div><div class="l">mAP Score</div></div>
+        </div>
+        <div class="pr"><span class="pill">PyTorch</span><span class="pill">YOLOv8</span><span class="pill">FastAPI</span><span class="pill">React</span><span class="pill">Docker</span></div>
+      </div>
+
+      <div class="card pcard reveal d1">
+        <div class="pmeta">
+          <div class="pico ip"><i class="fa-solid fa-chart-line"></i></div>
+          <span class="pdate">Nov 2025</span>
+        </div>
+        <div class="ptit">SentimentScope</div>
+        <div class="psub">Twitter Sentiment Intelligence Dashboard</div>
+        <p class="pdesc">Fine-tuned DistilBERT on a curated corpus of <strong>80K tweets</strong> for high-accuracy sentiment classification. Built a real-time ingestion pipeline via Tweepy + PostgreSQL with interactive trend charts and sentiment heatmaps. Open-sourced as a public AI trend analysis dashboard.</p>
+        <div class="pstats">
+          <div class="sc"><div class="n">91.4%</div><div class="l">Accuracy</div></div>
+          <div class="sc"><div class="n">80K</div><div class="l">Tweets Trained</div></div>
+        </div>
+        <div class="pr"><span class="pill">DistilBERT</span><span class="pill">Streamlit</span><span class="pill">Tweepy</span><span class="pill">PostgreSQL</span></div>
+      </div>
+
+      <div class="card pcard reveal d2">
+        <div class="pmeta">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div class="pico io" style="margin:0"><i class="fa-solid fa-database"></i></div>
+            <span style="padding:3px 11px;border-radius:100px;background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.2);font-size:.68rem;font-weight:700;font-family:'Syne',sans-serif;color:var(--a)">⭐ 120+ Stars</span>
+          </div>
+          <span class="pdate">Sep 2025</span>
+        </div>
+        <div class="ptit">DataForge</div>
+        <div class="psub">Automated EDA &amp; Feature Engineering Tool</div>
+        <p class="pdesc">Automates the full exploratory data analysis pipeline &mdash; profiling reports, feature engineering suggestions, and model recommendations from raw datasets. Adopted by <strong>40+ students and early-stage startups</strong> for rapid data insights, gaining 120+ GitHub stars in the first month.</p>
+        <div class="pstats">
+          <div class="sc"><div class="n">120+</div><div class="l">GitHub Stars</div></div>
+          <div class="sc"><div class="n">40+</div><div class="l">Active Users</div></div>
+        </div>
+        <div class="pr"><span class="pill">Python</span><span class="pill">Pandas</span><span class="pill">Scikit-learn</span><span class="pill">Plotly</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="w">
+    <div class="reveal"><div class="sl">Toolkit</div><h2 class="st">Technical Skills</h2></div>
+    <div class="sblock">
+      <div class="reveal">
+        <div class="sgl"><i class="fa-solid fa-code"></i><span>Languages</span></div>
+        <div class="tr"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">SQL</span><span class="tag">JavaScript</span></div>
+      </div>
+      <div class="divider"></div>
+      <div class="reveal d1">
+        <div class="sgl"><i class="fa-solid fa-brain"></i><span>AI / ML</span></div>
+        <div class="tr"><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">HuggingFace</span><span class="tag">YOLOv8</span><span class="tag">LangChain</span><span class="tag">OpenCV</span><span class="tag">Scikit-learn</span></div>
+      </div>
+      <div class="divider"></div>
+      <div class="reveal d2">
+        <div class="sgl"><i class="fa-solid fa-server"></i><span>Data &amp; Infrastructure</span></div>
+        <div class="tr"><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">AWS S3 / EC2</span><span class="tag">Git / GitHub</span><span class="tag">Excel Automation</span></div>
+      </div>
+      <div class="divider"></div>
+      <div class="reveal d3">
+        <div class="sgl"><i class="fa-solid fa-globe"></i><span>Web &amp; Tools</span></div>
+        <div class="tr"><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">Streamlit</span><span class="tag">Flask</span><span class="tag">SEO</span><span class="tag">Digital Marketing</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="w">
+    <div class="reveal"><div class="sl">Recognition</div><h2 class="st">Achievements &amp; Certifications</h2></div>
+    <div class="alist">
+      <div class="aitem reveal">
+        <div class="aico ag"><i class="fa-solid fa-trophy"></i></div>
+        <div><div class="atit">Global Innovation Award &middot; Diamond Challenge 2022</div><div class="asub">University of Delaware, USA &middot; PixFuzer</div></div>
+      </div>
+      <div class="aitem reveal d1">
+        <div class="aico at"><i class="fa-solid fa-certificate"></i></div>
+        <div><div class="atit">DeepLearning.AI Deep Learning Specialization</div><div class="asub">Andrew Ng &middot; Coursera 2025 &middot; + Google Python Crash Course</div></div>
+      </div>
+      <div class="aitem reveal d2">
+        <div class="aico at"><i class="fa-solid fa-medal"></i></div>
+        <div><div class="atit">HackerRank 5&#9733; Python &amp; Problem Solving</div><div class="asub">Top-rated in algorithmic problem solving</div></div>
+      </div>
+      <div class="aitem reveal d3">
+        <div class="aico at"><i class="fa-solid fa-ranking-star"></i></div>
+        <div><div class="atit">CodeChef Top 5% &middot; Starters Div. 3</div><div class="asub">February 2026</div></div>
+      </div>
+      <div class="aitem reveal">
+        <div class="aico ap2"><i class="fa-solid fa-code"></i></div>
+        <div><div class="atit">Runner-Up &middot; GGSIPU Tech Fest Hackathon 2025</div><div class="asub">Solo participant</div></div>
+      </div>
+      <div class="aitem reveal d1">
+        <div class="aico at"><i class="fa-solid fa-bullseye"></i></div>
+        <div><div class="atit">Delhi Institute of Digital Marketing (DIDM) Certified</div><div class="asub">Digital Marketing Certification</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="w">
+    <div class="ci">
+      <div class="reveal"><div class="sl">Get In Touch</div><h2 class="st">Let&rsquo;s Work Together</h2></div>
+      <p class="ctag reveal">Open to internships, research collaborations, and opportunities at the frontier of AI. If you&rsquo;re building something that matters, I&rsquo;d love to connect.</p>
+      <div class="clinks reveal d1">
+        <a href="mailto:aaravsharma3015@gmail.com" class="crow">
+          <div class="cico at"><i class="fa-solid fa-envelope"></i></div>
+          <div style="text-align:left"><div class="clbl">Email</div><div class="cval">aaravsharma3015@gmail.com</div></div>
+          <i class="fa-solid fa-arrow-right carr"></i>
+        </a>
+        <a href="tel:+919211179001" class="crow">
+          <div class="cico at"><i class="fa-solid fa-phone"></i></div>
+          <div style="text-align:left"><div class="clbl">Phone</div><div class="cval">+91 92111 79001</div></div>
+          <i class="fa-solid fa-arrow-right carr"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/aaravai/" target="_blank" class="crow">
+          <div class="cico" style="background:rgba(0,119,181,.12);border:1px solid rgba(0,119,181,.25);color:#4A9FD5"><i class="fa-brands fa-linkedin"></i></div>
+          <div style="text-align:left"><div class="clbl">LinkedIn</div><div class="cval">linkedin.com/in/aaravai</div></div>
+          <i class="fa-solid fa-arrow-right carr"></i>
+        </a>
+        <a href="https://github.com/Aaravdotdev" target="_blank" class="crow">
+          <div class="cico" style="background:rgba(255,255,255,.05);border:1px solid var(--b);color:var(--ts)"><i class="fa-brands fa-github"></i></div>
+          <div style="text-align:left"><div class="clbl">GitHub</div><div class="cval">github.com/Aaravdotdev</div></div>
+          <i class="fa-solid fa-arrow-right carr"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <span>&copy; 2026 Aarav Sharma &middot; Built as a developer portfolio</span>
+    <a href="https://github.com/Aaravdotdev" target="_blank"><i class="fa-brands fa-github"></i> github.com/Aaravdotdev</a>
+  </div>
+</footer>
+
+<script>
+// Theme
+const root=document.documentElement,tbtn=document.getElementById('tbtn'),tico=document.getElementById('tico');
+function applyLight(on){root.classList.toggle('light',on);tico.className=on?'fa-solid fa-moon':'fa-solid fa-sun';localStorage.setItem('theme',on?'light':'dark')}
+applyLight(localStorage.getItem('theme')==='light');
+tbtn.addEventListener('click',()=>applyLight(!root.classList.contains('light')));
+// Mobile nav
+const hbtn=document.getElementById('hbtn'),mnav=document.getElementById('mnav');
+hbtn.addEventListener('click',()=>mnav.classList.toggle('open'));
+function cm(){mnav.classList.remove('open')}
+// Scroll reveal
+const els=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:0.1});
+els.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
